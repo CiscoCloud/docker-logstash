@@ -10,16 +10,15 @@ docker build -t ciscocloud/docker-logstash .
 
 ## How to run
 ```
-docker run -it --name central-logstash \
-  -v $PWD/logstash.conf:/home/logstash/logstash.conf \
+docker run --rm -it --name logstash \
+  -v $PWD/conf.d:/home/logstash/conf.d \
   ciscocloud/docker-logstash /bin/bash
-bash-4.3# start_services.sh
 ```
 
 ## How to test
 ```
 docker pull ubuntu
-docker run -it --link central-logstash:central ubuntu /bin/bash
+docker run --rm -it --link logstash:logstash ubuntu /bin/bash
 ```
 Add to the end of your `rsyslog.conf` `*.* @@<hostname>:5514`
 ```

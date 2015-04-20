@@ -9,4 +9,5 @@ RUN wget -P /tmp "http://download.elastic.co/logstash/logstash/logstash-$VERSION
     && tar -xzf "/tmp/logstash-$VERSION.tar.gz" -C /tmp \
     && mv "/tmp/logstash-$VERSION" /home/logstash
 
-COPY start_services.sh /usr/local/bin/
+COPY start.sh /usr/local/bin/
+ENTRYPOINT ["/usr/local/bin/start.sh"]
