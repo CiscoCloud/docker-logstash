@@ -25,3 +25,6 @@ Add to the end of your `rsyslog.conf` `*.* @@<hostname>:5514`
 service rsyslog restart
 exit
 ```
+
+## Plugins
+Logentries plugin is supplied with this image.
