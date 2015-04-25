@@ -12,7 +12,7 @@ docker build -t ciscocloud/docker-logstash .
 ```
 docker run --rm -it --name logstash \
   -v $PWD/conf.d:/home/logstash/conf.d \
-  ciscocloud/docker-logstash /bin/bash
+  ciscocloud/docker-logstash logstash
 ```
 
 ## How to test
@@ -20,7 +20,8 @@ docker run --rm -it --name logstash \
 docker pull ubuntu
 docker run --rm -it --link logstash:logstash ubuntu /bin/bash
 ```
-Add to the end of your `rsyslog.conf` `*.* @@<hostname>:5514`
+Add to the end of your `rsyslog.conf`:
+`*.* @@<hostname>:5514`
 ```
 service rsyslog restart
 exit
