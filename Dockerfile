@@ -1,7 +1,7 @@
 FROM alpine
 
 # Logstash version
-ENV VERSION 1.5.0.rc3
+ENV VERSION 1.5.0-rc3
 
 ENV LOGSTASH_HOME /home/logstash
 ENV JAVA_HOME /usr/lib/jvm/java-1.7-openjdk
