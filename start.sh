@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 
 LOGSTASH_DIR=/home/logstash
 LOGSTASH_CONF=$LOGSTASH_DIR/conf.d/logstash.conf
