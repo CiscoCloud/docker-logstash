@@ -4,8 +4,6 @@ require "uri"
 require "net/http"
 require "net/https"
 
-
-
 class LogStash::Outputs::Logentries < LogStash::Outputs::Base
     config_name "logentries"
     milestone 2

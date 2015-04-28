@@ -1,5 +1,5 @@
 # docker-logstash
-Docker image with Logstash 1.5 leveraging Alpine Linux
+Docker image with Logstash 1.5
 
 ## How to build
 ```
@@ -11,7 +11,7 @@ docker build -t ciscocloud/docker-logstash .
 ## How to run
 ```
 docker run --rm -it --name logstash \
-  -v $PWD/conf.d:/home/logstash/conf.d \
+  -v $PWD/conf.d:/opt/logstash/conf.d \
   ciscocloud/docker-logstash logstash
 ```
 
