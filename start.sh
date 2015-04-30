@@ -1,11 +1,13 @@
 #!/bin/bash -x
 
-LOGSTASH_DIR=/opt/logstash
-LOGSTASH_CONF=$LOGSTASH_DIR/conf.d/logstash.conf
+LOGSTASH_HOME='/opt/logstash'
+LOGSTASH_CONF="$LOGSTASH_HOME/conf.d/logstash.conf"
+LOGSTASH_USER='logstash'
+LOGSTASH_ENTRYPOINT_CMD='logstash'
 
-if [ "$1" == 'logstash' ]; then
+if [ "$1" == "$LOGSTASH_ENTRYPOINT_CMD" ]; then
     if [ -e "$LOGSTASH_CONF" ]; then
-        $LOGSTASH_DIR/bin/logstash -f $LOGSTASH_CONF
+        /bin/su "$LOGSTASH_USER" -c "$LOGSTASH_HOME/bin/logstash -f $LOGSTASH_CONF"
         if [ $? != 0 ]; then
             exit 1
         fi
