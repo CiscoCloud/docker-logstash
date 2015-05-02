@@ -19,8 +19,6 @@ COPY conf.d/* "$LOGSTASH_HOME"/conf.d/
 COPY plugins/logentries.rb "$LOGSTASH_HOME"/lib/logstash/outputs/
 COPY start.sh /usr/local/bin/
 
-RUN chown -R logstash:logstash "$LOGSTASH_HOME"
-
 VOLUME /docker_logs
 
 ENTRYPOINT ["/usr/local/bin/start.sh"]

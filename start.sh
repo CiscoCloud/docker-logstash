@@ -7,7 +7,8 @@ LOGSTASH_ENTRYPOINT_CMD='logstash'
 
 if [ "$1" == "$LOGSTASH_ENTRYPOINT_CMD" ]; then
     if [ -e "$LOGSTASH_CONF" ]; then
-        /bin/su "$LOGSTASH_USER" -c "$LOGSTASH_HOME/bin/logstash -f $LOGSTASH_CONF"
+        /bin/chown -R $LOGSTASH_USER:$LOGSTASH_USER "$LOGSTASH_HOME"
+        /bin/su $LOGSTASH_USER -c "$LOGSTASH_HOME/bin/logstash -f $LOGSTASH_CONF"
         if [ $? != 0 ]; then
             exit 1
         fi
