@@ -22,3 +22,5 @@ COPY start.sh /usr/local/bin/
 VOLUME /docker_logs
 
 ENTRYPOINT ["/usr/local/bin/start.sh"]
+
+CMD ["logstash"]
