@@ -29,4 +29,4 @@ exit
 ```
 
 ## Plugins
-Logentries plugin is supplied with this image.
+[Logentries](https://logentries.com) plugin is supplied with this image.
