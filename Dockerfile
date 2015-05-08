@@ -4,8 +4,6 @@ FROM jeanblanchard/busybox-java
 ENV VERSION 1.5.0-rc3
 ENV LOGSTASH_HOME /opt/logstash
 
-RUN adduser -s /bin/sh -S logstash
-
 RUN opkg-install bash vim
 
 RUN curl "http://download.elastic.co/logstash/logstash/logstash-$VERSION.tar.gz" \
