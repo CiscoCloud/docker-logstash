@@ -1,7 +1,7 @@
 FROM jeanblanchard/busybox-java
 
 # Logstash version
-ENV VERSION 1.5.0-rc3
+ENV VERSION 1.5.0.rc4
 ENV LOGSTASH_HOME /opt/logstash
 
 RUN opkg-install bash vim
