@@ -20,7 +20,7 @@ RUN echo "gem \"webhdfs\"" >> $LOGSTASH_HOME/Gemfile
 RUN gem install -i $GEM_PATH webhdfs
 
 COPY conf.d/* $LOGSTASH_HOME/conf.d/
-COPY plugins/* $GEM_PATH/gems/logstash-core-$VERSION/lib/logstash/outputs/
+COPY plugins/* $GEM_PATH/gems/logstash-core-$VERSION-java/lib/logstash/outputs/
 COPY start.sh /usr/local/bin/
 
 VOLUME /docker_logs
