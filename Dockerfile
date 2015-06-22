@@ -23,8 +23,6 @@ COPY conf.d/* "$LOGSTASH_HOME/conf.d/"
 COPY plugins/* "$GEM_PATH/gems/logstash-core-$VERSION-java/lib/logstash/outputs/"
 COPY start.sh /usr/local/bin/
 
-VOLUME /docker
-
 ENTRYPOINT ["/usr/local/bin/start.sh"]
 
 CMD ["logstash"]
